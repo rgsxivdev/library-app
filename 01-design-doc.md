@@ -5,8 +5,16 @@ Build a simple app where users can complete a form to log books they've read or 
 
 ## Major Features
 - Enter book information to display the book as a card
-- Mark a book as read/unread
+  - Fields included:
+    - Title (Text input required)
+    - Author (Text input, required)
+    - Genre (Text input)
+    - Publication Year (Number input)
+    - Number of Pages (Number input)
+    - Status (Dropdown: "Read", "Plan to Read", default: "Plan to Read")
 - Delete book card
+  - Each card will have a clearly visible button to delete the card.(e.g., an "X" icon)
+  - Clicking the button will remove the card from the page as well as the underlying data and re-render the page.
 
 ## Potential Additions
 - Sort books by various criteria
@@ -23,3 +31,4 @@ Build a simple app where users can complete a form to log books they've read or 
 - User can mark the book read/unread
 - user can delete a book card if desired
 
+## Potential Problems
