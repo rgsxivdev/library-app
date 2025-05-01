@@ -1,3 +1,4 @@
+/* Reset & Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,70 +6,84 @@
 }
 
 body {
-    background-color: #1e1e2e; /* Deep purple-blue */
-    color: #f5e0dc; /* Soft pink */
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    line-height: 1.6;
+    padding: 1rem;
 }
 
+/* Header */
 header {
-    margin: 10px;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #302d41; /* Dark lavender */
-    background-color: rgba(48, 45, 65, 0.85); /* Semi-transparent dark lavender */
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Soft drop shadow */
-
+    background-color: #2a2a3d;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-h1 {
-    color: #f5c2e7; /* Light pink-purple pastel */
-}
-
-.library-grid {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+header h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    font-family: 'Meow Script';
 }
 
 .openModal {
-    position: absolute; /* Positioning the button at the bottom right corner */
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #89b4fa; /* Pastel blue */
-    color: #1e1e2e;
+    font-size: 1.5rem;
+    background-color: #4c84ff;
+    color: #fff;
     border: none;
-    font-size: 24px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    z-index: 1001; /* Higher than header (header uses z-index: 999) */
-
+    transition: background-color 0.3s ease;
 }
 
 .openModal:hover {
-    transform: scale(1.1);
-    background-color: #74c7ec; /* Softer blue */
+    background-color: #3b6fd8;
 }
 
-/* Modal Styles */
+/* Main Grid */
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Book Card */
+.bookCard {
+    background-color: #2e2e44;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.bookCard:hover {
+    transform: translateY(-5px);
+}
+
+.bookCard .title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #e0e0ff;
+}
+
+/* Modal */
 .modal {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(30, 30, 46, 0.7);
-    display: none;
+    background-color: rgba(15, 15, 25, 0.85);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 10;
 }
 
 .modal.show {
@@ -76,6 +91,98 @@ h1 {
 }
 
 .modal-content {
-    background-color: #313244; /* Desaturated deep blue */
-    padding: 3px;
+    position: relative; /* THIS FIXES THE closeModal BUTTON */
+    background-color: #2a2a3d;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #bbb;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    color: #ccc;
+}
+
+form input {
+    padding: 0.5rem
+}
+#submit {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #5f5fff, #4c84ff);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(76, 132, 255, 0.3);
+}
+
+#submit:hover {
+        background: linear-gradient(135deg, #4c84ff, #3b6fd8);
+        box-shadow: 0 6px 16px rgba(76, 132, 255, 0.5);
+        transform: translateY(-2px);
+    }
+
+.delete-btn {
+    margin-top: 1rem;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #e63b3b;
+}
+
+#closeModal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#closeModal:hover {
+    color: #fff;
 }

@@ -27,10 +27,11 @@ addBookBtn.addEventListener('click', (e)=>{
 
 // Book Class
 class Book {
-    constructor(title, author, pages) {
+    constructor(title, author, pages, id) {
         this.title = title;
         this.author = author;
         this.pages = pages;
+        this.id = Date.now();
     }
 }
 
@@ -56,9 +57,22 @@ function renderLibrary(){
         <div class="title">${book.author}</div>
         <div class="title">${book.pages}</div>
 `
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', (e)=>{
+            let bookId =  Number(e.target.parentElement.dataset.id);
+            bookArray.splice(bookArray.findIndex(book => book.id === bookId), 1);
+            renderLibrary();
+        })
         const bookCard = document.createElement('div');
         bookCard.classList.add('bookCard');
         bookCard.innerHTML = html;
+        bookCard.setAttribute('data-id', book.id);
+
+
+
         library.append(bookCard);
+        bookCard.append(deleteBtn);
     })
 }
