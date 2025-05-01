@@ -77,4 +77,5 @@ h1 {
 
 .modal-content {
     background-color: #313244; /* Desaturated deep blue */
-    padding: 3
+    padding: 3px;
+}
