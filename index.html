@@ -10,32 +10,12 @@
 
 <header>
     <h1>Fauxreads</h1>
-    <button class="fab"> + </button>
+    <button class="openModal"> + </button>
 </header>
 
 <main>
     <div id="library" class="library-grid">
         <!-- Books will be dynamically inserted here -->
-        <div class="book">
-            <img src="https://via.placeholder.com/150" alt="Book Cover">
-            <div class="book-info">
-                <h3>Book Title</h3>
-                <p>Author</p>
-            </div>
-        </div>
-        <div class="book">
-            <img src="https://via.placeholder.com/150" alt="Book Cover">
-            <div class="book-info">
-                <h3>Book Title</h3>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
-                <p>Unread</p>
-                <p>Favorite</p>
-                <p>Remove</p>
-            </div>
-        </div>
-    </div>
 </main>
 
 <!-- Modal -->
@@ -45,18 +25,18 @@
         <h2>Add a New Book</h2>
         <form id="bookForm">
             <label>Title:</label>
-            <input type="text" id="title" required>
+            <input name='title' type="text" id="title" required>
 
             <label>Author:</label>
-            <input type="text" id="author" required>
+            <input name='author' type="text" id="author" required>
 
             <label>Pages:</label>
-            <input type="number" id="pages" required>
+            <input name='pages' type="number" id="pages" required>
 
-            <label>Cover Image:</label>
-            <input type="file" id="cover">
+<!--            <label>Cover Image:</label>-->
+<!--            <input type="file" id="cover">-->
 
-            <button type="submit">Add Book</button>
+            <button id='submit' type="submit">Add Book</button>
         </form>
     </div>
 </div>
@@ -64,3 +44,8 @@
 <script src="app.js"></script>
 </body>
 </html>
+
+<!--<div class="book">-->
+
+<!--    <button class="delete-btn">Remove</button>-->
+<!--</div>`-->
