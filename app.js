@@ -25,6 +25,19 @@ addBookBtn.addEventListener('click', (e)=>{
     modal.classList.remove('show');
 } )
 
+library.addEventListener('click', (e)=>{
+    if (e.target.closest('.delete-btn')) {
+        console.log(e.target.closest('.delete-btn'));
+        let bookId =  Number(e.target.parentElement.dataset.id);
+        bookArray.splice(bookArray.findIndex(book => book.id === bookId), 1);
+        deleteBookCard(e.target);
+        // renderLibrary();
+    }
+})
+
+
+
+
 // Book Class
 class Book {
     constructor(title, author, pages, id) {
@@ -51,28 +64,27 @@ function addBookToArray(){
 // Re-render the library div whenever a new book is added to bookArray
 function renderLibrary(){
     library.innerHTML = '';
+
+
     bookArray.forEach(book =>{
         const html = `
         <div class="title">${book.title}</div>
         <div class="title">${book.author}</div>
         <div class="title">${book.pages}</div>
 `
-        const deleteBtn = document.createElement('button');
-        deleteBtn.classList.add('delete-btn');
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', (e)=>{
-            let bookId =  Number(e.target.parentElement.dataset.id);
-            bookArray.splice(bookArray.findIndex(book => book.id === bookId), 1);
-            renderLibrary();
-        })
         const bookCard = document.createElement('div');
         bookCard.classList.add('bookCard');
         bookCard.innerHTML = html;
         bookCard.setAttribute('data-id', book.id);
-
-
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.textContent = 'Delete';
 
         library.append(bookCard);
         bookCard.append(deleteBtn);
     })
+}
+
+function deleteBookCard(card){
+    card.closest('.bookCard').remove();
 }
