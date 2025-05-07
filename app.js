@@ -10,7 +10,12 @@ const bookForm = document.querySelector('#bookForm');
 const library = document.querySelector('#library');
 
 // Data
-const bookArray = [];
+const savedBooks = localStorage.getItem('userBooks');
+const bookArray = savedBooks ? JSON.parse(savedBooks) : [];
+// Local Storage
+
+
+
 
 // Event Listeners
 openModalBtn.addEventListener('click', ()=>{
@@ -56,7 +61,7 @@ function addBookToArray(){
     const pages = bookData.get('pages');
     const newBook = new Book(title, author, pages);
     bookArray.push(newBook);
-
+    localStorage.setItem('userBooks',JSON.stringify(bookArray))
     bookForm.reset();
     renderLibrary();
 }
@@ -88,3 +93,10 @@ function renderLibrary(){
 function deleteBookCard(card){
     card.closest('.bookCard').remove();
 }
+
+
+function loadBooks(){
+    renderLibrary();
+}
+
+loadBooks();
