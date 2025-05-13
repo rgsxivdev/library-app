@@ -1,188 +1,213 @@
 /* Reset & Base Styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1e1e2f;
-    color: #f0f0f0;
-    line-height: 1.6;
-    padding: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding: 1rem;
 }
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2a2a3d;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a2a3d;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
-    font-size: 4rem;
-    color: #ffffff;
-    font-family: 'Meow Script';
+  font-size: 4rem;
+  color: #ffffff;
+  font-family: "Meow Script";
 }
 
 .openModal {
-    font-size: 1.5rem;
-    background-color: #4c84ff;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  font-size: 1.5rem;
+  background-color: #4c84ff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .openModal:hover {
-    background-color: #3b6fd8;
+  background-color: #3b6fd8;
 }
 
 /* Main Grid */
 .library-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 /* Book Card */
 .bookCard {
-    background-color: #2e2e44;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s ease;
+  background-color: #2e2e44;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
 }
 
 .bookCard:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .bookCard .title {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #e0e0ff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #e0e0ff;
 }
 
 /* Modal */
 .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(15, 15, 25, 0.85);
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 25, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .modal.show {
-    display: flex;
+  display: flex;
 }
 
 .modal-content {
-    position: relative; /* THIS FIXES THE closeModal BUTTON */
-    background-color: #2a2a3d;
-    padding: 2rem;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-    color: #fff;
+  position: relative; /* THIS FIXES THE closeModal BUTTON */
+  background-color: #2a2a3d;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
-
 .modal-content h2 {
-    margin-bottom: 1rem;
-    color: #ffffff;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 /* Close Button */
 .close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    color: #bbb;
-    cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: #bbb;
+  cursor: pointer;
 }
 
 .close:hover {
-    color: #fff;
+  color: #fff;
 }
 
 /* Form Styles */
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 form label {
-    margin-top: 1rem;
-    margin-bottom: 0.3rem;
-    color: #ccc;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  color: #ccc;
 }
 
 form input {
-    padding: 0.5rem
+  padding: 0.5rem;
 }
 #submit {
-    margin-top: 1.5rem;
-    padding: 0.75rem;
-    background: linear-gradient(135deg, #5f5fff, #4c84ff);
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(76, 132, 255, 0.3);
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #5f5fff, #4c84ff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(76, 132, 255, 0.3);
 }
 
 #submit:hover {
-        background: linear-gradient(135deg, #4c84ff, #3b6fd8);
-        box-shadow: 0 6px 16px rgba(76, 132, 255, 0.5);
-        transform: translateY(-2px);
-    }
+  background: linear-gradient(135deg, #4c84ff, #3b6fd8);
+  box-shadow: 0 6px 16px rgba(76, 132, 255, 0.5);
+  transform: translateY(-2px);
+}
 
 .delete-btn {
-    margin-top: 1rem;
-    background-color: #ff4c4c;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-read {
+  margin-top: 1rem;
+  background-color: #ffab4c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read {
+  margin-top: 1rem;
+  background-color: #82ff4c;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .delete-btn:hover {
-    background-color: #e63b3b;
+  background-color: #e63b3b;
 }
 
 #closeModal {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    color: #bbb;
-    cursor: pointer;
-    transition: color 0.2s ease;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 #closeModal:hover {
-    color: #fff;
+  color: #fff;
 }

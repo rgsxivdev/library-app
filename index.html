@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fauxreads - My Library</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Faux Reads</h1>
+      <button class="openModal">+</button>
+    </header>
 
-<header>
-    <h1>Faux Reads</h1>
-    <button class="openModal"> + </button>
-</header>
+    <main>
+      <div id="library" class="library-grid"></div>
+      <!-- Books will be dynamically inserted here -->
+    </main>
 
-<main>
-    <div id="library" class="library-grid">
-
-    </div>     <!-- Books will be dynamically inserted here -->
-</main>
-
-<!-- Modal -->
-<div id="modal" class="modal ">
-    <div class="modal-content">
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
         <span id="closeModal" class="close">&times</span>
         <h2>Add a New Book</h2>
         <form id="bookForm">
-            <label>Title:</label>
-            <input name='title' type="text" id="title" required>
+          <label>Title:</label>
+          <input name="title" type="text" id="title" required />
 
-            <label>Author:</label>
-            <input name='author' type="text" id="author" required>
+          <label>Author:</label>
+          <input name="author" type="text" id="author" required />
 
-            <label>Pages:</label>
-            <input name='pages' type="number" id="pages" required>
+          <label>Pages:</label>
+          <input name="pages" type="number" id="pages" required />
 
-<!--            <label>Cover Image:</label>-->
-<!--            <input type="file" id="cover">-->
+          <!--            <label>Cover Image:</label>-->
+          <!--            <input type="file" id="cover">-->
 
-            <button id='submit' type="submit">Add Book</button>
+          <button id="submit" type="submit">Add Book</button>
         </form>
+      </div>
     </div>
-</div>
 
-<script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
 
 <!--<div class="book">-->

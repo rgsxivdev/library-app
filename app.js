@@ -32,24 +32,29 @@ addBookBtn.addEventListener('click', (e)=>{
 
 library.addEventListener('click', (e)=>{
     if (e.target.closest('.delete-btn')) {
-        console.log(e.target.closest('.delete-btn'));
         let bookId =  Number(e.target.parentElement.dataset.id);
         bookArray.splice(bookArray.findIndex(book => book.id === bookId), 1);
         deleteBookCard(e.target);
-        // renderLibrary();
+
     }
 })
 
-
-
+library.addEventListener('click', (e)=>{
+    let bookId =  Number(e.target.parentElement.dataset.id);
+    if (e.target.closest('.toggle-read')) {
+        e.target.classList.toggle('read')
+        readStatus(bookId);
+    }
+})
 
 // Book Class
 class Book {
-    constructor(title, author, pages, id) {
+    constructor(title, author, pages, id, readStatus = false){ 
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.id = Date.now();
+        this.readStatus = readStatus;
     }
 }
 
@@ -84,7 +89,12 @@ function renderLibrary(){
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('delete-btn');
         deleteBtn.textContent = 'Delete';
-
+        const toggleRead = document.createElement('button');
+        toggleRead.classList.add('toggle-read');
+        toggleRead.textContent = 'Read';
+        toggleRead.textContent = book.toggleRead ? "Read" : "Not Read";
+        library.append(bookCard);
+        bookCard.append(toggleRead);
         library.append(bookCard);
         bookCard.append(deleteBtn);
     })
@@ -97,6 +107,11 @@ function deleteBookCard(card){
 
 function loadBooks(){
     renderLibrary();
+}
+
+function readStatus(bookId) {
+const book = bookArray.find(book => book.bookId === book.bookId)
+book.readStatus = !book.readStatus;
 }
 
 loadBooks();
